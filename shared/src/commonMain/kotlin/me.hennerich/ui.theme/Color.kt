@@ -1,4 +1,4 @@
-package com.plcoding.contactscomposemultiplatform.ui.theme
+package me.hennerich.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
