@@ -2,6 +2,7 @@ package me.hennerich.core.presentation
 
 import androidx.compose.ui.window.ComposeUIViewController
 import me.hennerich.App
+import me.hennerich.di.AppModule
 import platform.UIKit.UIScreen
 import platform.UIKit.UIUserInterfaceStyle
 
@@ -10,6 +11,7 @@ fun MainViewController() = ComposeUIViewController {
         UIScreen.mainScreen.traitCollection.userInterfaceStyle == UIUserInterfaceStyle.UIUserInterfaceStyleDark
     App(
         darkTheme = isDarkTheme,
-        dynamicColor = false
+        dynamicColor = false,
+        appModule = AppModule()
     )
 }
