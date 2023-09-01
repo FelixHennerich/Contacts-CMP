@@ -12,13 +12,15 @@ import dev.icerock.moko.mvvm.compose.viewModelFactory
 import me.hennerich.contacts.presentation.ContactListScreen
 import me.hennerich.contacts.presentation.ContactListViewModel
 import me.hennerich.core.presentation.ContactsTheme
+import me.hennerich.core.presentation.ImagePicker
 import me.hennerich.di.AppModule
 
 @Composable
 fun App(
     darkTheme: Boolean,
     dynamicColor: Boolean,
-    appModule: AppModule
+    appModule: AppModule,
+    imagePicker: ImagePicker
 ) {
     ContactsTheme(
         darkTheme = darkTheme,
@@ -38,7 +40,8 @@ fun App(
             ContactListScreen(
                 state = state,
                 newContact = viewModel.newContact,
-                onEvent = viewModel::onEvent
+                onEvent = viewModel::onEvent,
+                imagePicker = imagePicker
             )
         }
     }

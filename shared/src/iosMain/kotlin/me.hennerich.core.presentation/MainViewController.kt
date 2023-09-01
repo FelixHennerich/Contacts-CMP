@@ -1,5 +1,6 @@
 package me.hennerich.core.presentation
 
+import androidx.compose.ui.interop.LocalUIViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import me.hennerich.App
 import me.hennerich.di.AppModule
@@ -12,6 +13,7 @@ fun MainViewController() = ComposeUIViewController {
     App(
         darkTheme = isDarkTheme,
         dynamicColor = false,
-        appModule = AppModule()
+        appModule = AppModule(),
+        imagePicker = ImagePickerFactory(LocalUIViewController.current).createPicker()
     )
 }
